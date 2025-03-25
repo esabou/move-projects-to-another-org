@@ -6,17 +6,14 @@ current_org = input("Enter the org ID where your current projects are: ")
 move_org = input("Enter the org ID where you would like to move your projects: ")
 auth_token = os.getenv("SNYK_TOKEN")
 
-headers = {
-"Authorization": f"token {auth_token}",
-"Content-Type": "application/vnd.api+json",
-"Accept": "application/vnd.api+json"
-}
+API_VERSION = "version=2024-10-15"
+
 
 # Get all projects enpoint for an Organisation
 def get_all_projects():
-    url = f"https://api.snyk.io/rest/orgs/{current_org}/projects?&version=2024-10-15"
+    url = f"https://api.snyk.io/rest/orgs/{current_org}/projects?&{API_VERSION}"
     
-    response = requests.get(url, headers=headers)
+    response = requests.get(url, headers={"Authorization": f"token {auth_token}"})
 
     if response.status_code == 200:
         data = response.json().get("data", [])
