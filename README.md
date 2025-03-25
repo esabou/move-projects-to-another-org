@@ -4,7 +4,7 @@ This script retrieves all projects from a specified Snyk organization and moves 
 
 ## Prerequisites
 - Python 3.x installed
-- A valid [Snyk API Token](https://docs.snyk.io)
+- A valid [Snyk API Token]([https://docs.snyk.io](https://docs.snyk.io/snyk-api/rest-api/authentication-for-api#how-to-obtain-your-personal-token))
 - `requests` library installed (if not, install using `pip install requests`)
 
 ## Installation
